@@ -7,10 +7,21 @@ import org.junit.jupiter.api.Test;
 public class RomanNumTest {
 
     @Test
-    public void testConvertZero() {
+    public void testConvertOne() {
         RomanNum converter = new RomanNum();
-        assertEquals("N", converter.convert(0));
+        assertEquals("I", converter.convert(1));
     }
-
+    
+    @Test
+    public void testConvertTwo() {
+        RomanNum converter = new RomanNum();
+        assertEquals("II", converter.convert(2));
+    }
+    
+    @Test
+    public void testConvertThree() {
+        RomanNum converter = new RomanNum();
+        assertEquals("III", converter.convert(3));
+    }
     
 }
