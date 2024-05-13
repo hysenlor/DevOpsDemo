@@ -17,6 +17,7 @@ public class PathListEntry<KEYTYPE> {
 	private List<String> details = new ArrayList<>();
 	private float order;
 	private Form form;
+	private String dozent;
 
 	public PathListEntry() {
 		this.active = true;
@@ -207,5 +208,7 @@ public class PathListEntry<KEYTYPE> {
 			return false;
 		return true;
 	}
-
+    public void setDozent(String dozent) {
+		this.dozent = dozent;
+    }
 }

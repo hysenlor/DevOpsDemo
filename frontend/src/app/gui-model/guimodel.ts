@@ -3,7 +3,7 @@ export class GuiModel {
 
     private _guiModel = {
         "application": {
-            "title": "DevOpsDemo FS2024",
+            "title": "DevOpsDemo FS2024, modifiziert von Hyseni Loren",
             "formList": [
                 {
                     "id": "OwnUserForm",
@@ -87,6 +87,47 @@ export class GuiModel {
                         }
                     ]
                 },
+                {
+                    "id": "VorlesungForm",
+                    "title": {default: "Vorlesung"},
+                    "url": "/vorlesung",
+                    "formFieldList": [
+                        {
+                            "id": "name",
+                            "type": "text",
+                            "name": { default: "Name" },
+                            "required": true,
+                            "width": 2
+                        },
+                        {
+                            "id": "description",
+                            "type": "text",
+                            "name": { default: "Beschreibung" },
+                            "required": true,
+                            "width": 2,
+                            "height": 4
+                        },
+                        {
+                            "id": "dozent",
+                            "type": "text",
+                            "name": { default: "Dozent" },
+                            "required": true,
+                            "width": 2
+                        },
+                        {
+                            "type": "deleteButton",
+                            "name": "Delete"
+                        },
+                        {
+                            "type": "cancelButton",
+                            "name": "Cancel"
+                        },
+                        {
+                            "type": "okButton",
+                            "name": "Ok"
+                        }
+                    ]
+                },                
             ],
             "pageList": [
                 {
@@ -95,7 +136,7 @@ export class GuiModel {
                     "elementList": [
                         {
                             "type": "pageLabel",
-                            "value": "<h4>Willkommen bei DevOps</h4>",
+                            "value": "<h4>Was möchtest du tun?</h4>",
                             "newRow": true
                         },
                         {
@@ -107,6 +148,14 @@ export class GuiModel {
                             "width": 2,
                             "newRow": true,
                         },
+                        {
+                            "type": "button",
+                            "name": { default: "Vorlesungen" },
+                            "icon": "fa-school",
+                            "color": "green",
+                            "page": "vorlesungPage",
+                            "width": 2,
+                            },
                     ]
                 },
                 {
@@ -138,6 +187,35 @@ export class GuiModel {
                         }
                     ]
                 },
+                {
+                    "id": "vorlesungPage",
+                    "elementList": [
+                        {
+                            "type": "backbutton",
+                        },
+                        {
+                            "type": "newButton",
+                            "name": { default: "Neue Vorlesung" },
+                            "icon": "fa-user",
+                            "color": "grey",
+                            "width": 2,
+                            "form" : {
+                                "form" : "VorlesungForm"
+                            }
+                        },
+                        {
+                            "type": "list",
+                            "name": "Vorlesung",
+                            "icon": "fa-scroll",
+                            "color": "red",
+                            "search": true,
+                            "url": "/vorlesung",
+                            "form": {
+                                "form": "VorlesungForm"
+                            }
+                        }
+                        ]
+                    },
             ]
         }
     };
