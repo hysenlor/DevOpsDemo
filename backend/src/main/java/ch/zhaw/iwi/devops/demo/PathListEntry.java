@@ -17,6 +17,7 @@ public class PathListEntry<KEYTYPE> {
 	private List<String> details = new ArrayList<>();
 	private float order;
 	private Form form;
+	@SuppressWarnings("unused")
 	private String dozent;
 
 	public PathListEntry() {
