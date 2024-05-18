@@ -15,7 +15,8 @@ public class RomanNumTest {
         "2, II",
         "3, III",
         "4, IV",
-        "5", V"
+        "5, V",
+        "10, X"
     })
     public void testConvertNumbers(int number, String expected) {
         assertEquals(expected, converter.convert(number));
