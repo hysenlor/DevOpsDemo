@@ -18,6 +18,7 @@ public class RomanNumTest {
         "5, V",
         "6, VI",
         "8, VIII",
+        "9, IX",
         "10, X",
         "11, XI",
         "12, XII"
