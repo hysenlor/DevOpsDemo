@@ -7,7 +7,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 public class RomanNumTest {
 
-    private RomanNum converter = new RomanNum(); // Eine einzige Instanz für alle Tests
+    private RomanNum converter = new RomanNum(); //Eine einzige Instanz für alle Tests
 
     @ParameterizedTest
     @CsvSource({
