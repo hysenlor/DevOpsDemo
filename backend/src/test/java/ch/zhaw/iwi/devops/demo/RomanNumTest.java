@@ -21,7 +21,11 @@ public class RomanNumTest {
         "9, IX",
         "10, X",
         "11, XI",
-        "12, XII"
+        "12, XII",
+        "499, CDXCIX",
+        "944, CMXLIV",
+        "2846, MMDCCCXLVI"
+
     })
     public void testConvertNumbers(int number, String expected) {
         assertEquals(expected, converter.convert(number));
