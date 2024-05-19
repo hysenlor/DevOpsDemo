@@ -1,32 +1,23 @@
 package ch.zhaw.iwi.devops.demo;
 
 public class RomanNum {
+
+    // Arrays zur Speicherung der Basis-Ziffern und subtraktiven Notationen
+    private static final int[] values = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+    private static final String[] symbols = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+
     public String convert(int number) {
-        StringBuilder result = new StringBuilder();
+        StringBuilder result = new StringBuilder();  
         
-        if (number >= 10){
-            result.append("X");
-            number -=10;
-        }
-        
-        if (number >= 5){
-            result.append("V");
-            number -=5;
-        }
-        
-        if (number >= 4){
-            result.append("IV");
-            number -=4;
-        } 
-        
-        for (int i = 1; i <= number; i++) {
-                result.append("I");
+        // Schleife über alle Werte und Symbole
+        for (int i = 0; i < values.length; i++) {
+            // Solange die aktuelle Zahl größer oder gleich dem aktuellen Wert ist
+            while (number >= values[i]) {
+                result.append(symbols[i]); 
+                number -= values[i]; 
+            }
         }
 
-        return result.toString();
-
-        
-
+        return result.toString();  // Gib die resultierende römische Ziffer als String zurück
     }
-
 }
