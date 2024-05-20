@@ -1,0 +1,74 @@
+{
+  "id": "75d386e0-0532-4140-a840-eb1583b09ade",
+  "version": "2.0",
+  "name": "Wikipedia test",
+  "url": "https://de.wikipedia.org",
+  "tests": [{
+    "id": "4665f98f-3a30-41c1-8c1e-963b84333e93",
+    "name": "ZHAW Page rumklicken",
+    "commands": [{
+      "id": "43310b23-1ffe-45cb-a398-5970f1a6bd07",
+      "comment": "",
+      "command": "open",
+      "target": "/wiki/Z%C3%BCrcher_Hochschule_f%C3%BCr_Angewandte_Wissenschaften",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8d66a9b5-8edc-4844-b465-2e1093d5fa10",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1331x1186",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "30ccd648-7beb-4a93-9901-c2529f8d8fc9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.tocsection-1 .toctext",
+      "targets": [
+        ["css=.tocsection-1 .toctext", "css:finder"],
+        ["xpath=//div[@id='toc']/ul/li/a/span[2]", "xpath:idRelative"],
+        ["xpath=//a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Geschichte')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d9ac7b4c-ee64-4c1a-aa56-f6486a2e8a5f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ergotherapie",
+      "targets": [
+        ["linkText=Ergotherapie", "linkText"],
+        ["css=p:nth-child(24) > i:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Ergotherapie')]", "xpath:link"],
+        ["xpath=//div[@id='mw-content-text']/div/p[12]/i/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/wiki/Ergotherapie')]", "xpath:href"],
+        ["xpath=//p[12]/i/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Ergotherapie')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "98db4cf4-78a4-4c18-92b0-1114157e8ac2",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.mw-page-title-main",
+      "targets": [
+        ["css=.mw-page-title-main", "css:finder"],
+        ["xpath=//h1[@id='firstHeading']/span", "xpath:idRelative"],
+        ["xpath=//h1/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Ergotherapie')]", "xpath:innerText"]
+      ],
+      "value": "Ergotherapie"
+    }]
+  }],
+  "suites": [{
+    "id": "1d85867c-927d-44a1-b1ae-1cded4d432c9",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["4665f98f-3a30-41c1-8c1e-963b84333e93"]
+  }],
+  "urls": ["https://de.wikipedia.org/"],
+  "plugins": []
+}
