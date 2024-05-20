@@ -1,13 +1,13 @@
 package ch.zhaw.iwi.devops.demo;
 
-public class Vorlesung {
+class Vorlesung {
 
     private int id;
     private String name;
     private String description;
     private String dozent;
 
-    public Vorlesung() {
+    Vorlesung() {
     }
     
     public Vorlesung(int id, String name, String description, String dozent) {
@@ -17,27 +17,27 @@ public class Vorlesung {
         this.dozent = dozent;
     }
 
-    public int getId() {
+    int getId() {
         return id;
     }    
 
-    public void setId(int id) {
+    void setId(int id) {
         this.id = id;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    public String getDescription() {
+    String getDescription() {
         return description;
     }
 
-    public String getDozent() {
+    String getDozent() {
         return dozent;
     }
     
-    public void setDozent(String dozent) {
+    void setDozent(String dozent) {
 		this.dozent = dozent;
     }
 }

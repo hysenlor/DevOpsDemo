@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-public class RomanNumTest {
+class RomanNumTest {
 
     private RomanNum converter = new RomanNum(); //Eine einzige Instanz für alle Tests
 
@@ -27,7 +27,7 @@ public class RomanNumTest {
         "2846, MMDCCCXLVI"
 
     })
-    public void testConvertNumbers(int number, String expected) {
+    void testConvertNumbers(int number, String expected) {
         assertEquals(expected, converter.convert(number));
     }
 }

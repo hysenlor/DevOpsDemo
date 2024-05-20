@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-public class MathLibTest {
+class MathLibTest {
     @Test
     void testIsEven() {
         assertTrue(MathLib.isEven(2));

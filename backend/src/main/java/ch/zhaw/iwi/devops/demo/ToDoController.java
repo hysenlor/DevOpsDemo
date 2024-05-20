@@ -19,12 +19,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin
 @RestController
-public class ToDoController {
+class ToDoController {
 
     private Map<Integer, ToDo> todos = new HashMap<Integer, ToDo>();
 
     @EventListener(ApplicationReadyEvent.class)
-    public void init() {
+    void init() {
         this.todos.put(1,new ToDo(1, "Neuer Job", "5 DevOps Engineers einstellen"));
         this.todos.put(2,new ToDo(2, "Geschäftsleitung", "Mit Präsentation von DevOps überzeugen"));
         this.todos.put(3,new ToDo(3, "Unit Tests", "Neues Projekt mit Unit Tests starten"));
@@ -34,23 +34,23 @@ public class ToDoController {
     }
 
     @GetMapping("/test")
-    public String test() {
+    String test() {
         return "ToDo app is up and running!";
     }
 
     @GetMapping("/services/ping")
-    public String ping() {
+    String ping() {
         String languageCode = "de";
         return "{ \"status\": \"ok\", \"userId\": \"admin"+ "\", \"languageCode\": \"" + languageCode + "\",\"version\": \"0.0.1" + "\"}";
     }
 
     @GetMapping("/count")
-    public int count() {
+    int count() {
         return this.todos.size();
     }
 
     @GetMapping("/services/todo")
-    public List<PathListEntry<Integer>> todo() {
+    List<PathListEntry<Integer>> todo() {
         var result = new ArrayList<PathListEntry<Integer>>();
         for (var todo : this.todos.values()) {
             var entry = new PathListEntry<Integer>();
@@ -64,25 +64,25 @@ public class ToDoController {
     }
 
     @GetMapping("/services/todo/{key}")
-    public ToDo getTodo(@PathVariable Integer key) {
+    ToDo getTodo(@PathVariable Integer key) {
         return this.todos.get(key);
     }
 
     @PostMapping("/services/todo")
-    public void createTodo(@RequestBody ToDo todo) {
+    void createTodo(@RequestBody ToDo todo) {
         var newId = this.todos.keySet().stream().max(Comparator.naturalOrder()).orElse(0) + 1;
         todo.setId(newId);
         this.todos.put(newId, todo);
     }
 
     @PutMapping("/services/todo/{id}")
-    public void createTodo(@PathVariable Integer id, @RequestBody ToDo todo) {
+    void createTodo(@PathVariable Integer id, @RequestBody ToDo todo) {
         todo.setId(id);
         this.todos.put(id, todo);
     }
 
     @DeleteMapping("/services/todo/{key}")
-    public ToDo deleteTodo(@PathVariable Integer key) {
+    ToDo deleteTodo(@PathVariable Integer key) {
         return this.todos.remove(key);
     }
 

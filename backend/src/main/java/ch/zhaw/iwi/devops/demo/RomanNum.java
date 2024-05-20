@@ -1,12 +1,12 @@
 package ch.zhaw.iwi.devops.demo;
 
-public class RomanNum {
+class RomanNum {
 
     // Arrays zur Speicherung der Basis-Ziffern und subtraktiven Notationen
     private static final int[] values = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
     private static final String[] symbols = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
 
-    public String convert(int number) {
+    String convert(int number) {
         StringBuilder result = new StringBuilder();  
         
         // Schleife über alle Werte und Symbole

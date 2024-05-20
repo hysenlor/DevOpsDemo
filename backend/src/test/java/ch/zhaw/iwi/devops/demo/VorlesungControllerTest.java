@@ -5,10 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 import org.junit.jupiter.api.Test;
 
-public class VorlesungControllerTest {
+ class VorlesungControllerTest {
 
     @Test
-    public void testPostVorlesung() {
+    void testPostVorlesung() {
         VorlesungController controller = new VorlesungController();
         var vorlesung = new Vorlesung(0, "t", "d", "doz");
         controller.createVorlesung(vorlesung);
@@ -22,7 +22,7 @@ public class VorlesungControllerTest {
     }
 
     @Test
-    public void testGetVorlesung() {
+    void testGetVorlesung() {
         VorlesungController controller = new VorlesungController();
         Vorlesung vorlesung = new Vorlesung(1, "t", "d", "doz");
         controller.createVorlesung(vorlesung);
@@ -34,7 +34,7 @@ public class VorlesungControllerTest {
     }
 
         @Test
-    public void testPutVorlesung() {
+    void testPutVorlesung() {
         VorlesungController controller = new VorlesungController();
         var vorlesung = new Vorlesung(1, "t", "d", "doz");
         controller.createVorlesung(1, vorlesung);
@@ -42,7 +42,7 @@ public class VorlesungControllerTest {
     }
 
         @Test
-    public void testDeleteVorlesung() {
+    void testDeleteVorlesung() {
         VorlesungController controller = new VorlesungController();
         Vorlesung vorlesung = new Vorlesung(1, "t", "d", "doz");
         controller.createVorlesung(vorlesung);
