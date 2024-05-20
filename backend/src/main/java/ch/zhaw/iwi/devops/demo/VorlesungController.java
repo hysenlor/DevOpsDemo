@@ -21,14 +21,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class VorlesungController {
 
-    private Map<Integer, Vorlesung> vorlesungen = new HashMap<Integer, Vorlesung>();
+    private Map<Integer, Vorlesung> vorlesungen = new HashMap<>();
 
     @EventListener(ApplicationReadyEvent.class)
     public void init() {
         this.vorlesungen.put(1, new Vorlesung(1, "Software Engineering", "Lernen Sie, wie man qualitativ hochwertige Software entwickelt", "Prof. Dr. Müller"));
         this.vorlesungen.put(2, new Vorlesung(2, "Netzwerke", "Einführung in die Grundlagen von Netzwerken", "Prof. Dr. Schmidt"));
-        // Beliebig viele vorlesungen hinzufügen
-        System.out.println("vorlesungen Init Data");
     }
 
     @GetMapping("/services/vorlesung")
