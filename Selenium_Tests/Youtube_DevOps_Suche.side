@@ -1,0 +1,90 @@
+{
+  "id": "e72bc453-dde8-4c1b-ae20-a51aeae7fe42",
+  "version": "2.0",
+  "name": "Youtube",
+  "url": "https://www.youtube.com",
+  "tests": [{
+    "id": "55dd6f0f-2a8c-44ab-bf7b-6e89f115be6d",
+    "name": "Youtube_DevOps",
+    "commands": [{
+      "id": "a0fffdf2-adb3-4b81-a1c0-b64947b5cfa7",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "531596a7-bb69-4a94-a076-a2d58b422254",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "948x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1be4e31a-4723-422c-bf25-bb98acbe07c3",
+      "comment": "",
+      "command": "click",
+      "target": "name=search_query",
+      "targets": [
+        ["name=search_query", "name"],
+        ["css=#search-input > #search", "css:finder"],
+        ["xpath=//input[@id='search']", "xpath:attributes"],
+        ["xpath=//div[@id='search-input']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "05a89636-3d74-4acb-acca-f48cc2be6dae",
+      "comment": "",
+      "command": "type",
+      "target": "name=search_query",
+      "targets": [
+        ["name=search_query", "name"],
+        ["css=#search-input > #search", "css:finder"],
+        ["xpath=//input[@id='search']", "xpath:attributes"],
+        ["xpath=//div[@id='search-input']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "DevOps"
+    }, {
+      "id": "62290e6a-4e58-4224-851e-6ccbd349b68f",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=search_query",
+      "targets": [
+        ["name=search_query", "name"],
+        ["css=#search-input > #search", "css:finder"],
+        ["xpath=//input[@id='search']", "xpath:attributes"],
+        ["xpath=//div[@id='search-input']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "3a037d08-85bf-478b-adf0-c4090117bfbb",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=video-title",
+      "targets": [
+        ["id=video-title", "id"],
+        ["linkText=Was ist DevOps? Einfach erklärt! Lernvideo", "linkText"],
+        ["css=.style-scope:nth-child(2) > #contents > .style-scope:nth-child(1) > #dismissible #video-title", "css:finder"],
+        ["xpath=//a[@id='video-title']", "xpath:attributes"],
+        ["xpath=//div[@id='title-wrapper']/h3/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/watch?v=ak3oE0I6cXU&pp=ygUGRGV2T3Bz')])[2]", "xpath:href"],
+        ["xpath=//h3/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Was ist DevOps? Einfach erklärt! Lernvideo')]", "xpath:innerText"]
+      ],
+      "value": "Was ist DevOps? Einfach erklärt! Lernvideo"
+    }]
+  }],
+  "suites": [{
+    "id": "a118d204-999a-43fc-93c4-44bb5bd9234c",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["55dd6f0f-2a8c-44ab-bf7b-6e89f115be6d"]
+  }],
+  "urls": ["https://www.youtube.com/"],
+  "plugins": []
+}

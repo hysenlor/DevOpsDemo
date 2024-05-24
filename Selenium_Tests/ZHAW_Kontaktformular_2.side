@@ -1,0 +1,191 @@
+{
+  "id": "c473cb36-2d9f-4373-bb4b-606c28bd9181",
+  "version": "2.0",
+  "name": "ZHAW_Kontakt",
+  "url": "https://www.zhaw.ch",
+  "tests": [{
+    "id": "834fe365-d569-4d57-b820-ba858ca3e11a",
+    "name": "Test-Kontakt",
+    "commands": [{
+      "id": "7e7a3430-f7a9-455c-9bfe-2bb363658dab",
+      "comment": "",
+      "command": "open",
+      "target": "/de/fokusthemen/zhaw-sustainable/kontaktformular/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d188bc2b-004b-4c7e-bb3c-843b863ab440",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1331x1248",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "068f1aa9-4bb9-41f2-bc56-4461fa8e5890",
+      "comment": "",
+      "command": "click",
+      "target": "id=powermail_field_vorname",
+      "targets": [
+        ["id=powermail_field_vorname", "id"],
+        ["name=tx_powermail_pi1[field][vorname]", "name"],
+        ["css=#powermail_field_vorname", "css:finder"],
+        ["xpath=//input[@id='powermail_field_vorname']", "xpath:attributes"],
+        ["xpath=//div[@id='c188833']/div/form/fieldset/div/input", "xpath:idRelative"],
+        ["xpath=//fieldset/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fc91830e-94b3-49e8-9e81-9af535f58a17",
+      "comment": "",
+      "command": "type",
+      "target": "id=powermail_field_vorname",
+      "targets": [
+        ["id=powermail_field_vorname", "id"],
+        ["name=tx_powermail_pi1[field][vorname]", "name"],
+        ["css=#powermail_field_vorname", "css:finder"],
+        ["xpath=//input[@id='powermail_field_vorname']", "xpath:attributes"],
+        ["xpath=//div[@id='c188833']/div/form/fieldset/div/input", "xpath:idRelative"],
+        ["xpath=//fieldset/div/input", "xpath:position"]
+      ],
+      "value": "Hans"
+    }, {
+      "id": "5cec25a5-7f89-4c24-b0fa-4517cee0371f",
+      "comment": "",
+      "command": "type",
+      "target": "id=powermail_field_nachname",
+      "targets": [
+        ["id=powermail_field_nachname", "id"],
+        ["name=tx_powermail_pi1[field][nachname]", "name"],
+        ["css=#powermail_field_nachname", "css:finder"],
+        ["xpath=//input[@id='powermail_field_nachname']", "xpath:attributes"],
+        ["xpath=//div[@id='c188833']/div/form/fieldset/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Mustermann"
+    }, {
+      "id": "94bf911a-d1b9-4101-a4a8-7a83bb6df2a5",
+      "comment": "",
+      "command": "type",
+      "target": "id=powermail_field_e_mail",
+      "targets": [
+        ["id=powermail_field_e_mail", "id"],
+        ["name=tx_powermail_pi1[field][e_mail]", "name"],
+        ["css=#powermail_field_e_mail", "css:finder"],
+        ["xpath=//input[@id='powermail_field_e_mail']", "xpath:attributes"],
+        ["xpath=//div[@id='c188833']/div/form/fieldset/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "musterhans@hotmail.com"
+    }, {
+      "id": "4fa9f8e6-38fe-4e9e-80ad-9f185fd986aa",
+      "comment": "",
+      "command": "click",
+      "target": "id=powermail_field_wennzhawwelchesdepartement",
+      "targets": [
+        ["id=powermail_field_wennzhawwelchesdepartement", "id"],
+        ["name=tx_powermail_pi1[field][wennzhawwelchesdepartement]", "name"],
+        ["css=#powermail_field_wennzhawwelchesdepartement", "css:finder"],
+        ["xpath=//select[@id='powermail_field_wennzhawwelchesdepartement']", "xpath:attributes"],
+        ["xpath=//div[@id='c188833']/div/form/fieldset/div[5]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "78774a16-2f1a-4561-afa1-ebdc6a04676f",
+      "comment": "",
+      "command": "select",
+      "target": "id=powermail_field_wennzhawwelchesdepartement",
+      "targets": [],
+      "value": "label=Dept. Angewandte Linguistik"
+    }, {
+      "id": "d61a839c-a5a1-4a83-bfba-52dd911057ce",
+      "comment": "",
+      "command": "click",
+      "target": "css=option:nth-child(2)",
+      "targets": [
+        ["css=option:nth-child(2)", "css:finder"],
+        ["xpath=//option[@value='Dept. Angewandte Linguistik']", "xpath:attributes"],
+        ["xpath=//select[@id='powermail_field_wennzhawwelchesdepartement']/option[2]", "xpath:idRelative"],
+        ["xpath=//option[2]", "xpath:position"],
+        ["xpath=//option[contains(.,'Dept. Angewandte Linguistik')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "69e95721-d9e1-42ef-a472-2cf8652e569a",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,170)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "294aaf4d-f25e-4f09-b0cf-4350d642f960",
+      "comment": "",
+      "command": "click",
+      "target": "id=powermail_field_marker",
+      "targets": [
+        ["id=powermail_field_marker", "id"],
+        ["name=tx_powermail_pi1[field][marker]", "name"],
+        ["css=#powermail_field_marker", "css:finder"],
+        ["xpath=//textarea[@id='powermail_field_marker']", "xpath:attributes"],
+        ["xpath=//div[@id='powermail_fieldwrap_51600']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f865af8a-004d-4f66-96f8-6d43c36a5ffd",
+      "comment": "",
+      "command": "type",
+      "target": "id=powermail_field_marker",
+      "targets": [
+        ["id=powermail_field_marker", "id"],
+        ["name=tx_powermail_pi1[field][marker]", "name"],
+        ["css=#powermail_field_marker", "css:finder"],
+        ["xpath=//textarea[@id='powermail_field_marker']", "xpath:attributes"],
+        ["xpath=//div[@id='powermail_fieldwrap_51600']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Test"
+    }, {
+      "id": "1d965a1d-c657-49d0-98f0-019223842690",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-block",
+      "targets": [
+        ["css=.btn-block", "css:finder"],
+        ["xpath=//input[@value='Absenden']", "xpath:attributes"],
+        ["xpath=//div[@id='c188833']/div/form/fieldset/div[7]/div/input", "xpath:idRelative"],
+        ["xpath=//div[7]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a017e973-eacf-42d2-ae77-442e1425fa37",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.list-inline-item",
+      "targets": [],
+      "value": "Ihre Angaben wurden erfolgreich übermittelt."
+    }, {
+      "id": "d79323ea-4f7b-409d-a853-c6eb7f096d22",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.powermail_all_marker_vorname:nth-child(2)",
+      "targets": [
+        ["css=.powermail_all_marker_vorname:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='c188833']/div/div/table/tbody/tr/td[2]", "xpath:idRelative"],
+        ["xpath=//td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'Hans')]", "xpath:innerText"]
+      ],
+      "value": "Hans"
+    }]
+  }],
+  "suites": [{
+    "id": "09c219c3-99c1-438f-b8b6-f23258f79c37",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.zhaw.ch/"],
+  "plugins": []
+}
