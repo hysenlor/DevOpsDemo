@@ -1,6 +1,7 @@
 package ch.zhaw.iwi.devops.demo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,9 +11,15 @@ class ToDoControllerTest {
     void testCreate() {
         ToDoController controller = new ToDoController();
         var todo = new ToDo(1, "t", "d");
-        controller.createTodo(1, todo);
+        controller.createTodo(todo);
         assertEquals(1, controller.count());
-        assertEquals(1, controller.todo().size());
+        var responseEntity = controller.todo();
+        assertNotNull(responseEntity);
+        var todos = responseEntity.getBody();
+        assertNotNull(todos);
+        
+        assertEquals(1, todos.size());
+
     }
 
 }
