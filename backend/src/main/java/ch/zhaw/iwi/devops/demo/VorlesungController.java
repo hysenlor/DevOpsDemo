@@ -29,7 +29,7 @@ class VorlesungController {
         this.vorlesungen.put(2, new Vorlesung(2, "Netzwerke", "Einführung in die Grundlagen von Netzwerken", "Prof. Dr. Schmidt"));
     }
 
-    @GetMapping("/services/vorlesung")
+    @GetMapping(value = "/services/vorlesung", produces = "application/json")
     List<PathListEntry<Integer>> vorlesung() {
         var result = new ArrayList<PathListEntry<Integer>>();
         for (var vorlesung : this.vorlesungen.values()) {
@@ -44,25 +44,25 @@ class VorlesungController {
         return result;
     }
 
-    @GetMapping("/services/vorlesung/{key}")
+    @GetMapping(value = "/services/vorlesung/{key}", produces = "application/json")
     Vorlesung getVorlesung(@PathVariable Integer key) {
         return this.vorlesungen.get(key);
     }
 
-    @PostMapping("/services/vorlesung")
+    @PostMapping(value = "/services/vorlesung", consumes = "application/json", produces = "application/json")
     void createVorlesung(@RequestBody Vorlesung vorlesung) {
         int newId = this.vorlesungen.keySet().stream().max(Comparator.naturalOrder()).orElse(0) + 1;
         vorlesung.setId(newId);
         this.vorlesungen.put(newId, vorlesung);
     }
 
-    @PutMapping("/services/vorlesung/{id}")
+    @PutMapping(value = "/services/vorlesung/{id}", consumes = "application/json", produces = "application/json")
     void createVorlesung(@PathVariable Integer id, @RequestBody Vorlesung vorlesung) {
         vorlesung.setId(id);
         this.vorlesungen.put(id, vorlesung);
     }
 
-    @DeleteMapping("/services/vorlesung/{id}")
+    @DeleteMapping(value = "/services/vorlesung/{id}", produces = "application/json")
     Vorlesung deleteVorlesung(@PathVariable Integer id) {
         return this.vorlesungen.remove(id);
     }

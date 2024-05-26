@@ -49,7 +49,7 @@ class ToDoController {
         return this.todos.size();
     }
 
-    @GetMapping("/services/todo")
+    @GetMapping(value = "/services/todo", produces = "application/json")
     List<PathListEntry<Integer>> todo() {
         var result = new ArrayList<PathListEntry<Integer>>();
         for (var todo : this.todos.values()) {
@@ -63,25 +63,25 @@ class ToDoController {
         return result;
     }
 
-    @GetMapping("/services/todo/{key}")
+    @GetMapping(value = "/services/todo/{key}", produces = "application/json")
     ToDo getTodo(@PathVariable Integer key) {
         return this.todos.get(key);
     }
 
-    @PostMapping("/services/todo")
+    @PostMapping(value = "/services/todo", consumes = "application/json", produces = "application/json")
     void createTodo(@RequestBody ToDo todo) {
         var newId = this.todos.keySet().stream().max(Comparator.naturalOrder()).orElse(0) + 1;
         todo.setId(newId);
         this.todos.put(newId, todo);
     }
 
-    @PutMapping("/services/todo/{id}")
+    @PutMapping(value = "/services/todo/{id}", consumes = "application/json", produces = "application/json")
     void createTodo(@PathVariable Integer id, @RequestBody ToDo todo) {
         todo.setId(id);
         this.todos.put(id, todo);
     }
 
-    @DeleteMapping("/services/todo/{key}")
+    @DeleteMapping(value = "/services/todo/{key}", produces = "application/json")
     ToDo deleteTodo(@PathVariable Integer key) {
         return this.todos.remove(key);
     }
